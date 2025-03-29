@@ -14,7 +14,6 @@ function App() {
 
   return (
     <div className="space-y-4 max-w-11/12 my-5 mx-auto">
-      <NavBar></NavBar>
       <Suspense fallback={<Loading></Loading>}>
         <Bottles bottlesPromise={bottlesPromise}></Bottles>
       </Suspense>
