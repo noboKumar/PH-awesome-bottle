@@ -1,6 +1,7 @@
 import React, { use, useState } from "react";
 import Bottle from "../bottle/Bottle";
 import NavBar from "../NavBar";
+import { addToLocalStorage } from "../../utilities/localStorage";
 
 const Bottles = ({ bottlesPromise }) => {
   const bottles = use(bottlesPromise);
@@ -10,6 +11,7 @@ const Bottles = ({ bottlesPromise }) => {
   const handleAddToCart = (bottle) => {
     const newCartValue = [...cartValue, bottle];
     setCartValue(newCartValue);
+    addToLocalStorage(bottle.id);
   };
   const [cartDetails, setCartDetails] = useState([]);
 
@@ -31,7 +33,7 @@ const Bottles = ({ bottlesPromise }) => {
         cartDetails={cartDetails}
         totalCartPrice={totalCartPrice}
       ></NavBar>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         {bottles.map((bottle) => (
           <Bottle
             key={bottle.id}

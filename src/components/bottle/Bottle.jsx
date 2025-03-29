@@ -15,9 +15,9 @@ const Bottle = ({
   };
 
   return (
-    <div className="border-4 drop-shadow-xl bg-slate-100 border-cyan-800 rounded-xl p-6 space-y-2">
+    <div className="space-y-2 rounded-2xl border-4 border-cyan-800 bg-slate-100 p-6 drop-shadow-xl">
       <img
-        className="w-6/12 rounded-xl mx-auto border-2 border-gray-400"
+        className="mx-auto w-6/12 rounded-xl border-2 border-gray-400"
         src={img}
         alt={name}
       />
@@ -27,7 +27,7 @@ const Bottle = ({
         {ratings}⭐ ({ratingsCount})
       </p>
       <p
-        className={`text-xl ${stock < 10 ? "text-red-500 font-semibold" : ""}`}
+        className={`text-xl ${stock < 10 ? "font-semibold text-red-500" : ""}`}
       >
         Available Products: {stock}
       </p>
